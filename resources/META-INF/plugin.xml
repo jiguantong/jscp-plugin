@@ -1,19 +1,12 @@
 <idea-plugin>
     <id>com.your.company.unique.plugin.id</id>
-    <name>Plugin display name here</name>
-    <version>1.0</version>
-    <vendor email="support@yourcompany.com" url="http://www.yourcompany.com">YourCompany</vendor>
+    <name>Jscp</name>
+    <version>0.8</version>
+    <vendor email="04637@163.com" url="https://www.aid.dev">阳光彩虹小白马Plus</vendor>
 
-    <description><![CDATA[
-      Enter short description for your plugin here.<br>
-      <em>most HTML tags may be used</em>
-    ]]></description>
+    <description></description>
 
-    <change-notes><![CDATA[
-      Add change notes here.<br>
-      <em>most HTML tags may be used</em>
-    ]]>
-    </change-notes>
+    <change-notes></change-notes>
 
     <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
     <idea-version since-build="173.0" />
@@ -28,10 +21,19 @@
 
     <actions>
         <action id="dev.aid.jscp.DeployAction" class="dev.aid.jscp.DeployAction" text="jscp"
-            description="jscp">
-            <add-to-group group-id="NavBarToolBar" anchor="after"
+            description="jscp" icon="/icons/up2.svg">
+            <add-to-group group-id="NavBarToolBar" anchor="before"
                 relative-to-action="ToolbarRunGroup" />
         </action>
     </actions>
-
+    <extensions defaultExtensionNs="com.intellij">
+        <projectService serviceImplementation="dev.aid.jscp.settings.JscpState" />
+        <projectConfigurable parentId="tools" instance="dev.aid.jscp.settings.JscpConfigurable"
+            id="dev.aid.jscp.settings.JscpConfigurable" displayName="Jscp Plugin"
+            nonDefaultProject="true" />
+        <!--<toolWindow id="Jscp" icon="/icons/up2.svg" anchor="bottom"-->
+        <!--    factoryClass="com.intellij.execution.dashboard.RunDashboardToolWindowFactory" />-->
+        <toolWindow id="Jscp" icon="/icons/up2.svg"
+            anchor="bottom" factoryClass="dev.aid.jscp.window.MyToolWindowFactory"/>
+    </extensions>
 </idea-plugin>
