@@ -4,9 +4,14 @@
     <version>0.8</version>
     <vendor email="04637@163.com" url="https://www.aid.dev">阳光彩虹小白马Plus</vendor>
 
-    <description></description>
+    <description>一键部署工具，可上传文件，执行命令，并在控制台中显示服务器的日志内容。
+        <br>
+        配置: File => Settings => Tools => Jscp Plugin || 或直接搜索 jscp</br>
+        github: https://github.com/04637/go-pscp, https://github.com/04637/jscp-plugin</description>
 
-    <change-notes></change-notes>
+    <change-notes>支持文件上传至服务器 支持上传后执行指定命令，例如可上传war至tomcat后重启tomcat并追踪日志
+        <br>支持在Settings中配置相关项, File => Settings => Tools => Jscp Plugin || 或直接搜索 jscp</br>
+    </change-notes>
 
     <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
     <idea-version since-build="173.0" />

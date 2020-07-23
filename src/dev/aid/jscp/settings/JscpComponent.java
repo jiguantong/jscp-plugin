@@ -4,10 +4,12 @@ import com.intellij.openapi.ui.TextFieldWithBrowseButton;
 import com.intellij.ui.TitledSeparator;
 import com.intellij.ui.components.JBLabel;
 import com.intellij.ui.components.JBPasswordField;
+import com.intellij.ui.components.JBTextArea;
 import com.intellij.ui.components.JBTextField;
 import com.intellij.util.ui.FormBuilder;
 
 import javax.swing.JComponent;
+import javax.swing.JFormattedTextField;
 import javax.swing.JPanel;
 
 /**
@@ -41,7 +43,10 @@ public class JscpComponent {
                 .addComponent(new TitledSeparator("Project settings"))
                 .addLabeledComponent(new JBLabel("Remote dir: "), remoteDirText)
                 .addLabeledComponent(new JBLabel("Local dir: "), localDirChoose)
+                .addSeparator()
                 .addLabeledComponent(new JBLabel("Deploy cmd: "), cmdText)
+                .addComponent(new JBTextArea("该命令将在文件上传完成后执行\n示例(部署tomcat项目后, 重启tomcat并追踪日志): \n"+
+                        "source /etc/profile&&${TOMCAT_HOME}/bin/shutdown.sh&&${TOMCAT_HOME}/bin/startup.sh&&tail -f ${TOMCAT_HOME}/logs/catalina.out"))
                 .addComponentFillVertically(new JPanel(), 0)
                 .getPanel();
     }
