@@ -4,6 +4,7 @@ import com.intellij.execution.filters.TextConsoleBuilderFactory;
 import com.intellij.execution.process.OSProcessHandler;
 import com.intellij.execution.process.ProcessHandler;
 import com.intellij.execution.ui.ConsoleView;
+import com.intellij.execution.ui.ConsoleViewContentType;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.project.Project;
@@ -50,6 +51,7 @@ public class DeployAction extends AnAction {
         if (currentContent == null) {
             currentContent = toolWindow.getContentManager().getFactory().createContent(consoleView.getComponent(), "Console", false);
             toolWindow.getContentManager().addContent(currentContent);
+            consoleView.print("You can modify settings of Jscp: File => Settings => Tools => Jscp Plugin\n", ConsoleViewContentType.LOG_INFO_OUTPUT);
         }
 
         Runtime runtime = Runtime.getRuntime();

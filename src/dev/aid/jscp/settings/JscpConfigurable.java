@@ -5,6 +5,7 @@ import com.intellij.openapi.options.Configurable;
 import com.intellij.openapi.options.ConfigurationException;
 import com.intellij.openapi.project.Project;
 
+import org.apache.commons.lang.StringUtils;
 import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.Nullable;
 
@@ -81,7 +82,7 @@ public class JscpConfigurable implements Configurable {
     public void reset() {
         JscpState settings = JscpState.getInstance(project);
         component.setIpText(settings.ip);
-        if (settings.port.length() == 0) {
+        if (StringUtils.isEmpty(settings.port)) {
             settings.port = "22";
         }
         component.setSshPortText(settings.port);
