@@ -1,15 +1,30 @@
 <idea-plugin>
     <id>aid.dev.jscp</id>
     <name>Jscp</name>
-    <version>0.8.2</version>
+    <version>0.8.3</version>
     <vendor email="04637@163.com" url="https://www.aid.dev">阳光彩虹小白马Plus</vendor>
 
     <description><![CDATA[
-    <b>一键部署工具, 可上传文件, 执行命令, 并在控制台中显示服务器的日志内容。</b>
+    <h2>一键部署插件, 将文件上传至服务器并执行指定命令, 将服务器日志输出在 IntelliJ IDEs 控制台</h2>
+        <hr>
+        <h3>设置: File => Settings => Tools => Jscp Plugin</h3>
         <br>
-        <br>
-        设置: File => Settings => Tools => Jscp Plugin</br>
-        <br>
+        <p>配置说明: </p>
+        <ul>
+            <li>Server ip: 服务器IP, 会将文件上传至该ip</li>
+            <li>Ssh port: 服务器ssh端口, 默认22</li>
+            <li>Server ip: 服务器IP, 会将文件上传至该ip</li>
+            <li>Ssh port: 服务器ssh端口, 默认22</li>
+            <li>User name: 服务器登录用户名</li>
+            <li>Password: 登录密码</li>
+            <li>Remote dir: 文件将上传至服务器上的该目录</li>
+            <li>Local dir/file: 选择本地待上传的目录/文件</li>
+            <li>Deploy cmd: 文件上传完成后将执行该命令 (示例: 重启tomcat并获取日志输出) <code>source /etc/profile&&${TOMCAT_HOME}/bin/shutdown.sh&&${TOMCAT_HOME}/bin/startup.sh&&tail -f ${TOMCAT_HOME}/logs/catalina.out</code></li>
+        </ul>
+        <p>使用: </p>
+        <ul>
+            <li>IDEs右上角Build左侧蓝色按钮, 点击执行</li>
+        </ul>
         <hr>
         <a href="https://github.com/04637/go-pscp">https://github.com/04637/go-pscp</a><br>
         <a href="https://github.com/04637/jscp-plugin">https://github.com/04637/jscp-plugin</a><br>
@@ -18,10 +33,12 @@
 
     <change-notes><![CDATA[
     <ul>
-      <li><emb>支持文件上传至服务器并可在上传后执行指定命令, 例如可上传war至tomcat后重启tomcat并追踪日志</emb></li>
-      <hr>
-      <li><emb>支持在Settings中配置相关项, File => Settings => Tools => Jscp Plugin || 或直接搜索 jscp</emb></li>
+      <li><emb>更新插件描述</emb></li>
+      <li><emb>添加详细设置项说明</emb></li>
+      <li><emb>提升用户体验</emb></li>
     </ul>
+    <hr/>
+    <a href="https://github.com/04637/jscp-plugin/blob/master/README.md">https://github.com/04637/jscp-plugin/blob/master/README.md</a>
     ]]>
     </change-notes>
 
