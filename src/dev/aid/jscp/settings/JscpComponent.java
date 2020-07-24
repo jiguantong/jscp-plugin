@@ -32,7 +32,6 @@ public class JscpComponent {
     private final JBTextField cmdText = new JBTextField();
 
     public JscpComponent() {
-        pwdText.setPasswordIsStored(true);
         JBTextArea tip = new JBTextArea("Example (restart tomcat and track logs): \n" +
                 "   source /etc/profile&&${TOMCAT_HOME}/bin/shutdown.sh&&${TOMCAT_HOME}/bin/startup.sh&&tail -f ${TOMCAT_HOME}/logs/catalina.out");
         tip.setEditable(false);

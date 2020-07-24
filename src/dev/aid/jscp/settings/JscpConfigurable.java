@@ -44,10 +44,6 @@ public class JscpConfigurable implements Configurable {
         component.getLocalDirChoose().addBrowseFolderListener(
                 "Select local dir", "", project,
                 new FileChooserDescriptor(true, true, true, true, false, false) {
-                    // @Override
-                    // public boolean isFileSelectable(VirtualFile file) {
-                    //     return true;
-                    // }
                 }
         );
         return component.getPanel();

@@ -65,8 +65,6 @@
         <projectConfigurable parentId="tools" instance="dev.aid.jscp.settings.JscpConfigurable"
             id="dev.aid.jscp.settings.JscpConfigurable" displayName="Jscp Plugin"
             nonDefaultProject="true" />
-        <!--<toolWindow id="Jscp" icon="/icons/up2.svg" anchor="bottom"-->
-        <!--    factoryClass="com.intellij.execution.dashboard.RunDashboardToolWindowFactory" />-->
         <toolWindow id="Jscp" icon="/icons/up2.svg"
             anchor="bottom" factoryClass="dev.aid.jscp.window.MyToolWindowFactory"/>
     </extensions>
