@@ -38,6 +38,9 @@ public class JscpComponent {
                 "   source /etc/profile&&${TOMCAT_HOME}/bin/shutdown.sh&&${TOMCAT_HOME}/bin/startup.sh&&tail -f ${TOMCAT_HOME}/logs/catalina.out");
         tip.setEditable(false);
         tip.setLineWrap(true);
+        JBTextArea tip2 = new JBTextArea("Example (build maven project): mvn build");
+        tip2.setEditable(false);
+        tip2.setLineWrap(true);
         remoteDirText.getEmptyText().setText("The local directory/file will be uploaded to the directory.");
         deployCmdText.getEmptyText().setText("After uploading, the command will be executed on the server. Nullable.");
         buildCmdText.getEmptyText().setText("Before starting the upload, the command will be executed locally. Nullable.");
@@ -55,6 +58,7 @@ public class JscpComponent {
                 .addLabeledComponent(new JBLabel("Local dir/file: "), localDirChoose)
                 .addComponent(new TitledSeparator("Command"))
                 .addLabeledComponent(new JBLabel("Build cmd: "), buildCmdText)
+                .addComponent(tip2)
                 .addLabeledComponent(new JBLabel("Deploy cmd: "), deployCmdText)
                 .addComponent(tip)
                 .addComponentFillVertically(new JPanel(), 0)

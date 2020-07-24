@@ -19,6 +19,7 @@
             <li>Password: 登录密码</li>
             <li>Remote dir: 文件将上传至服务器上的该目录</li>
             <li>Local dir/file: 选择本地待上传的目录/文件</li>
+            <li>Build cmd: 文件上传前将在本地执行该命令, 可为空代表无前置命令 (示例: 构建maven项目) <code>mvn build</code><li>
             <li>Deploy cmd: 文件上传完成后将在服务器执行该命令(执行结果会打印在Jscp Console), 可为空代表仅上传文件 (示例: 重启tomcat并获取日志输出) <code>source /etc/profile&&${TOMCAT_HOME}/bin/shutdown.sh&&${TOMCAT_HOME}/bin/startup.sh&&tail -f ${TOMCAT_HOME}/logs/catalina.out</code></li>
         </ul>
         <p>使用: </p>
