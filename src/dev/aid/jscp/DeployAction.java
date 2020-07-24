@@ -13,7 +13,6 @@ import com.intellij.openapi.wm.ToolWindowManager;
 import com.intellij.ui.content.Content;
 import com.intellij.util.io.BaseOutputReader;
 
-import org.codehaus.plexus.util.FileUtils;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.Closeable;
@@ -81,7 +80,8 @@ public class DeployAction extends AnAction {
             currentContent = toolWindow.getContentManager().getFactory().createContent(consoleView.getComponent(), "Console", false);
             toolWindow.getContentManager().addContent(currentContent);
             consoleView.print(command + "\n", ConsoleViewContentType.NORMAL_OUTPUT);
-            if (!FileUtils.fileExists(configPath)) {
+
+            if (!new File(configPath).exists()) {
                 consoleView.print("Please config Jscp: File => Settings => Tools => Jscp Plugin\n", ConsoleViewContentType.ERROR_OUTPUT);
                 return;
             } else {
