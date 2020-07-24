@@ -82,6 +82,9 @@ public class JscpConfigurable implements Configurable {
     public void reset() {
         JscpState settings = JscpState.getInstance(project);
         component.setIpText(settings.ip);
+        if (StringUtils.isEmpty(settings.user)) {
+            settings.user = "root";
+        }
         if (StringUtils.isEmpty(settings.port)) {
             settings.port = "22";
         }

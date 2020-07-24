@@ -1,7 +1,7 @@
 <idea-plugin>
     <id>aid.dev.jscp</id>
     <name>Jscp</name>
-    <version>0.8</version>
+    <version>0.8.1</version>
     <vendor email="04637@163.com" url="https://www.aid.dev">阳光彩虹小白马Plus</vendor>
 
     <description><![CDATA[
