@@ -29,6 +29,7 @@ public class JscpState implements PersistentStateComponent<JscpState> {
     public String remoteDir;
     public String localDir;
     public String cmd;
+    public String buildCmd;
 
     @Nullable
     @Override

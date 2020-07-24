@@ -97,7 +97,8 @@ public class DeployAction extends AnAction {
             if (processHandler != null) {
                 processHandler.destroyProcess();
             }
-            process = runtime.exec(command);
+            process = runtime.exec("cmd /c E:&&cd " + basePath + " && yarn build && " + command);
+            System.out.println("cmd /c C:&&cd" + basePath + "/yarn build && " + command);
             processHandler =
                     new OSProcessHandler(process, command, StandardCharsets.UTF_8) {
                         @NotNull

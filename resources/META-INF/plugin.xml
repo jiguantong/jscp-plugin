@@ -1,11 +1,11 @@
 <idea-plugin>
     <id>aid.dev.jscp</id>
     <name>Jscp</name>
-    <version>0.8.4</version>
+    <version>0.8.5</version>
     <vendor email="04637@163.com" url="https://github.com/04637">阳光彩虹小白马Plus</vendor>
 
     <description><![CDATA[
-    <h2>一键部署插件, 将文件上传至服务器并执行指定命令, 将服务器日志输出在 IntelliJ IDEs 控制台</h2>
+    <h2>一键部署插件, 将文件/目录上传至服务器并执行指定命令, 将服务器日志输出在 IntelliJ IDEs 控制台</h2>
         <hr>
         <h3>设置: File => Settings => Tools => Jscp Plugin</h3>
         <br>
@@ -19,7 +19,7 @@
             <li>Password: 登录密码</li>
             <li>Remote dir: 文件将上传至服务器上的该目录</li>
             <li>Local dir/file: 选择本地待上传的目录/文件</li>
-            <li>Deploy cmd: 文件上传完成后将执行该命令 (示例: 重启tomcat并获取日志输出) <code>source /etc/profile&&${TOMCAT_HOME}/bin/shutdown.sh&&${TOMCAT_HOME}/bin/startup.sh&&tail -f ${TOMCAT_HOME}/logs/catalina.out</code></li>
+            <li>Deploy cmd: 文件上传完成后将在服务器执行该命令(执行结果会打印在Jscp Console), 可为空代表仅上传文件 (示例: 重启tomcat并获取日志输出) <code>source /etc/profile&&${TOMCAT_HOME}/bin/shutdown.sh&&${TOMCAT_HOME}/bin/startup.sh&&tail -f ${TOMCAT_HOME}/logs/catalina.out</code></li>
         </ul>
         <p>使用: </p>
         <ul>

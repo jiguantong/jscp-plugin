@@ -58,7 +58,8 @@ public class JscpConfigurable implements Configurable {
         modified |= !component.getPwdText().equals(settings.pwd);
         modified |= !component.getRemoteDirText().equals(settings.remoteDir);
         modified |= !component.getLocalDirChooseText().equals(settings.localDir);
-        modified |= !component.getCmdText().equals(settings.cmd);
+        modified |= !component.getDeployCmdText().equals(settings.cmd);
+        modified |= !component.getBuildCmdText().equals(settings.buildCmd);
         return modified;
     }
 
@@ -71,7 +72,8 @@ public class JscpConfigurable implements Configurable {
         settings.pwd = component.getPwdText();
         settings.localDir = component.getLocalDirChooseText();
         settings.remoteDir = component.getRemoteDirText();
-        settings.cmd = component.getCmdText();
+        settings.cmd = component.getDeployCmdText();
+        settings.buildCmd = component.getBuildCmdText();
     }
 
     @Override
@@ -89,7 +91,8 @@ public class JscpConfigurable implements Configurable {
         component.setPwdText(settings.pwd);
         component.setLocalDirChoose(settings.localDir);
         component.setRemoteDirText(settings.remoteDir);
-        component.setCmdText(settings.cmd);
+        component.setDeployCmdText(settings.cmd);
+        component.setBuildCmdText(settings.buildCmd);
     }
 
     @Override

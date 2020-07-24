@@ -29,7 +29,9 @@ public class JscpComponent {
     // project
     private final JBTextField remoteDirText = new JBTextField();
     private final TextFieldWithBrowseButton localDirChoose = new TextFieldWithBrowseButton();
-    private final JBTextField cmdText = new JBTextField();
+    // cmd
+    private final JBTextField buildCmdText = new JBTextField();
+    private final JBTextField deployCmdText = new JBTextField();
 
     public JscpComponent() {
         JBTextArea tip = new JBTextArea("Example (restart tomcat and track logs): \n" +
@@ -37,7 +39,8 @@ public class JscpComponent {
         tip.setEditable(false);
         tip.setLineWrap(true);
         remoteDirText.getEmptyText().setText("The local directory/file will be uploaded to the directory.");
-        cmdText.getEmptyText().setText("The command will be executed after the upload is over.");
+        deployCmdText.getEmptyText().setText("After uploading, the command will be executed on the server. Nullable.");
+        buildCmdText.getEmptyText().setText("Before starting the upload, the command will be executed locally. Nullable.");
         mainPanel = FormBuilder.createFormBuilder()
                 .addComponent(new TitledSeparator("Server settings"))
                 .addLabeledComponent(new JBLabel("Server ip: "),
@@ -50,9 +53,9 @@ public class JscpComponent {
                 .addComponent(new TitledSeparator("Project settings"))
                 .addLabeledComponent(new JBLabel("Remote dir: "), remoteDirText)
                 .addLabeledComponent(new JBLabel("Local dir/file: "), localDirChoose)
-                .addSeparator()
-                .addComponent(tip)
-                .addLabeledComponent(new JBLabel("Deploy cmd: "), cmdText)
+                .addComponent(new TitledSeparator("Command"))
+                .addLabeledComponent(new JBLabel("Build cmd: "), buildCmdText)
+                .addLabeledComponent(new JBLabel("Deploy cmd: "), deployCmdText)
                 .addComponent(tip)
                 .addComponentFillVertically(new JPanel(), 0)
                 .getPanel();
@@ -63,7 +66,7 @@ public class JscpComponent {
         return mainPanel;
     }
 
-    public JComponent getPreferredFocusedComponent(){
+    public JComponent getPreferredFocusedComponent() {
         return ipText;
     }
 
@@ -119,11 +122,19 @@ public class JscpComponent {
         return localDirChoose;
     }
 
-    public void setCmdText(String cmd) {
-        cmdText.setText(cmd);
+    public void setDeployCmdText(String cmd) {
+        deployCmdText.setText(cmd);
     }
 
-    public String getCmdText() {
-        return cmdText.getText();
+    public String getDeployCmdText() {
+        return deployCmdText.getText();
+    }
+
+    public void setBuildCmdText(String cmd) {
+        buildCmdText.setText(cmd);
+    }
+
+    public String getBuildCmdText() {
+        return buildCmdText.getText();
     }
 }
