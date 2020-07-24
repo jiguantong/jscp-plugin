@@ -2,7 +2,7 @@
     <id>aid.dev.jscp</id>
     <name>Jscp</name>
     <version>0.8.3</version>
-    <vendor email="04637@163.com" url="https://www.aid.dev">阳光彩虹小白马Plus</vendor>
+    <vendor email="04637@163.com" url="https://github.com/04637">阳光彩虹小白马Plus</vendor>
 
     <description><![CDATA[
     <h2>一键部署插件, 将文件上传至服务器并执行指定命令, 将服务器日志输出在 IntelliJ IDEs 控制台</h2>
