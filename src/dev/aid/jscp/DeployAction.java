@@ -79,7 +79,7 @@ public class DeployAction extends AnAction {
         if (currentContent == null) {
             currentContent = toolWindow.getContentManager().getFactory().createContent(consoleView.getComponent(), "Console", false);
             toolWindow.getContentManager().addContent(currentContent);
-            consoleView.print(command + "\n", ConsoleViewContentType.NORMAL_OUTPUT);
+            // consoleView.print(command + "\n", ConsoleViewContentType.NORMAL_OUTPUT);
 
             if (!new File(configPath).exists()) {
                 consoleView.print("Please config Jscp: File => Settings => Tools => Jscp Plugin\n", ConsoleViewContentType.ERROR_OUTPUT);
