@@ -96,7 +96,7 @@ public class JscpComponent {
     }
 
     public String getPwdText() {
-        return pwdText.getText();
+        return new String(pwdText.getPassword());
     }
 
     public void setRemoteDirText(String remoteDir) {
