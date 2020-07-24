@@ -8,6 +8,8 @@ import com.intellij.ui.components.JBTextArea;
 import com.intellij.ui.components.JBTextField;
 import com.intellij.util.ui.FormBuilder;
 
+import java.awt.Dimension;
+
 import javax.swing.JComponent;
 import javax.swing.JPanel;
 
@@ -20,22 +22,21 @@ import javax.swing.JPanel;
 public class JscpComponent {
     private final JPanel mainPanel;
     // server
-    private final JBTextField ipText = new JBTextField(13);
-    private final JBTextField sshPortText = new JBTextField(3);
-    private final JBTextField userText = new JBTextField(13);
+    private final JBTextField ipText = new JBTextField();
+    private final JBTextField sshPortText = new JBTextField();
+    private final JBTextField userText = new JBTextField();
     private final JBPasswordField pwdText = new JBPasswordField();
     // project
     private final JBTextField remoteDirText = new JBTextField();
     private final TextFieldWithBrowseButton localDirChoose = new TextFieldWithBrowseButton();
-    private final JBTextField cmdText = new JBTextField(50);
+    private final JBTextField cmdText = new JBTextField();
 
     public JscpComponent() {
         pwdText.setPasswordIsStored(true);
-        pwdText.setColumns(24);
-        remoteDirText.setColumns(50);
         JBTextArea tip = new JBTextArea("Example (restart tomcat and track logs): \n" +
                 "   source /etc/profile&&${TOMCAT_HOME}/bin/shutdown.sh&&${TOMCAT_HOME}/bin/startup.sh&&tail -f ${TOMCAT_HOME}/logs/catalina.out");
         tip.setEditable(false);
+        tip.setLineWrap(true);
         remoteDirText.getEmptyText().setText("The local directory/file will be uploaded to the directory.");
         cmdText.getEmptyText().setText("The command will be executed after the upload is over.");
         mainPanel = FormBuilder.createFormBuilder()
@@ -56,6 +57,7 @@ public class JscpComponent {
                 .addComponent(tip)
                 .addComponentFillVertically(new JPanel(), 0)
                 .getPanel();
+        mainPanel.setPreferredSize(new Dimension(400, -1));
     }
 
     public JPanel getPanel() {
