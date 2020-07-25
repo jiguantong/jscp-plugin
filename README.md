@@ -1,5 +1,6 @@
-## IntelliJ IDEs 一键部署插件, 一键完成 build => upload => server restart && tail log
+## IntelliJ-based IDEs 一键部署插件, 一键完成 build => upload => server restart && tail log
 ----
+https://plugins.jetbrains.com/plugin/14761-jscp
 ### 1. 设置项位置: File => Settings => Jscp Plugin
 配置说明:<br>
   - Server ip: 服务器IP, 会将文件上传至该ip
