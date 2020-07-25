@@ -5,11 +5,12 @@
     <vendor email="04637@163.com" url="https://github.com/04637">阳光彩虹小白马Plus</vendor>
 
     <description><![CDATA[
-    <h2>一键部署插件, 将文件/目录上传至服务器并执行指定命令, 将服务器日志输出在 IntelliJ IDEs 控制台</h2>
+        <h2>在 IDEs 中一键完成构建, 上传, 远程启动, 日志监控</h2>
+        <emb>无需切换窗口或打开其他应用即可完成部署及日志监控</emb>
         <hr>
-        <h3>设置: File => Settings => Tools => Jscp Plugin</h3>
+        <h3>设置: File => Settings => Jscp Plugin</h3>
         <br>
-        <p>配置说明: </p>
+        <p>配置说明: <a href="https://github.com/04637/jscp-plugin/blob/master/README.md">ReadMe</a></p>
         <ul>
             <li>Server ip: 服务器IP, 会将文件上传至该ip</li>
             <li>Ssh port: 服务器ssh端口, 默认22</li>
@@ -19,27 +20,28 @@
             <li>Password: 登录密码</li>
             <li>Remote dir: 文件将上传至服务器上的该目录</li>
             <li>Local dir/file: 选择本地待上传的目录/文件</li>
-            <li>Build cmd: 文件上传前将在本地执行该命令, 可为空代表无前置命令 (示例: 构建maven项目) <code>mvn build</code><li>
-            <li>Deploy cmd: 文件上传完成后将在服务器执行该命令(执行结果会打印在Jscp Console), 可为空代表仅上传文件 (示例: 重启tomcat并获取日志输出) <code>source /etc/profile&&${TOMCAT_HOME}/bin/shutdown.sh&&${TOMCAT_HOME}/bin/startup.sh&&tail -f ${TOMCAT_HOME}/logs/catalina.out</code></li>
+            <li>Build cmd: 文件上传前将在本地执行该命令, 可为空</li>
+            <li>Deploy cmd: 文件上传完成后将在服务器执行该命令, 可为空</li>
         </ul>
         <p>使用: </p>
         <ul>
             <li>IDEs右上角Build左侧蓝色按钮, 点击执行</li>
         </ul>
         <hr>
-        <a href="https://github.com/04637/go-pscp">https://github.com/04637/go-pscp</a><br>
+        <a href="https://github.com/04637/jscp-plugin/releases">离线插件包下载</a><br>
         <a href="https://github.com/04637/jscp-plugin">https://github.com/04637/jscp-plugin</a><br>
+        <a href="https://github.com/04637/go-pscp">https://github.com/04637/go-pscp</a><br>
     ]]>
     </description>
 
     <change-notes><![CDATA[
     <ul>
-      <li><emb>更新插件描述</emb></li>
-      <li><emb>添加详细设置项说明</emb></li>
-      <li><emb>提升用户体验</emb></li>
+      <li>更新插件描述</li>
+      <li>添加详细设置项说明</li>
+      <li>更改设置位置, 使其更容易找到</li>
+      <li>现在支持build命令整合</li>
+      <li>解决日志中文乱码问题</li>
     </ul>
-    <hr/>
-    <a href="https://github.com/04637/jscp-plugin/blob/master/README.md">https://github.com/04637/jscp-plugin/blob/master/README.md</a>
     ]]>
     </change-notes>
 
@@ -63,10 +65,10 @@
     </actions>
     <extensions defaultExtensionNs="com.intellij">
         <projectService serviceImplementation="dev.aid.jscp.settings.JscpState" />
-        <projectConfigurable parentId="tools" instance="dev.aid.jscp.settings.JscpConfigurable"
+        <projectConfigurable parentId="root" instance="dev.aid.jscp.settings.JscpConfigurable"
             id="dev.aid.jscp.settings.JscpConfigurable" displayName="Jscp Plugin"
             nonDefaultProject="true" />
-        <toolWindow id="Jscp" icon="/icons/up2.svg"
-            anchor="bottom" factoryClass="dev.aid.jscp.window.MyToolWindowFactory"/>
+        <toolWindow id="Jscp" icon="/icons/up2.svg" anchor="bottom"
+            factoryClass="dev.aid.jscp.window.MyToolWindowFactory" />
     </extensions>
 </idea-plugin>

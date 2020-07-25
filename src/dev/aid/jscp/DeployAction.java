@@ -89,10 +89,10 @@ public class DeployAction extends AnAction {
             toolWindow.getContentManager().addContent(consoleContent);
             // consoleView.print(command + "\n", ConsoleViewContentType.NORMAL_OUTPUT);
             if (!new File(configPath).exists()) {
-                consoleView.print("Please config Jscp: File => Settings => Tools => Jscp Plugin\n", ConsoleViewContentType.ERROR_OUTPUT);
+                consoleView.print("Please configure Jscp in: File => Settings => Jscp Plugin\n\n", ConsoleViewContentType.ERROR_OUTPUT);
                 return;
             } else {
-                consoleView.print("You can modify settings of Jscp: File => Settings => Tools => Jscp Plugin\n", ConsoleViewContentType.LOG_WARNING_OUTPUT);
+                consoleView.print("You can configure Jscp in: File => Settings => Jscp Plugin\n\n", ConsoleViewContentType.LOG_WARNING_OUTPUT);
             }
         }
 
@@ -108,8 +108,11 @@ public class DeployAction extends AnAction {
                 // build 命令
                 String buildCmd = readBuildCmdFromXml(configPath);
                 if (!StringUtils.isEmpty(buildCmd)) {
+                    String _buildCmd = buildCmd;
                     buildCmd = "cmd /c " + buildCmd;
+                    consoleView.print("### => Building: " + _buildCmd + "\n", ConsoleViewContentType.LOG_VERBOSE_OUTPUT);
                     process = runtime.exec(buildCmd, null, new File(basePath));
+
                     processHandler =
                             new OSProcessHandler(process, buildCmd, Charset.defaultCharset()) {
                                 @NotNull
@@ -128,17 +131,17 @@ public class DeployAction extends AnAction {
                     process.destroy();
                     processHandler.destroyProcess();
                     if (buildCode != 0) {
-                        consoleView.print("### => Build failed!\n", ConsoleViewContentType.ERROR_OUTPUT);
+                        consoleView.print("\n### => Build failed!\n", ConsoleViewContentType.ERROR_OUTPUT);
                         return;
                     } else {
-                        consoleView.print("### => Build complete.\n\n", ConsoleViewContentType.LOG_INFO_OUTPUT);
+                        consoleView.print("\n### => Build complete.\n\n", ConsoleViewContentType.LOG_INFO_OUTPUT);
                     }
                 }
-
+                consoleView.print("### => Pushing...\n", ConsoleViewContentType.LOG_VERBOSE_OUTPUT);
                 // 主命令
                 process = runtime.exec(mainCommand);
                 processHandler =
-                        new OSProcessHandler(process, mainCommand, Charset.defaultCharset()) {
+                        new OSProcessHandler(process, mainCommand) {
                             @NotNull
                             @Override
                             protected BaseOutputReader.Options readerOptions() {

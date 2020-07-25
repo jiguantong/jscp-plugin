@@ -44,6 +44,7 @@ public class JscpComponent {
         remoteDirText.getEmptyText().setText("The local directory/file will be uploaded to the directory.");
         deployCmdText.getEmptyText().setText("After uploading, the command will be executed on the server. Nullable.");
         buildCmdText.getEmptyText().setText("Before starting the upload, the command will be executed locally. Nullable.");
+        JBLabel weChat = new JBLabel("_04637");
         mainPanel = FormBuilder.createFormBuilder()
                 .addComponent(new TitledSeparator("Server settings"))
                 .addLabeledComponent(new JBLabel("Server ip: "),
@@ -58,9 +59,15 @@ public class JscpComponent {
                 .addLabeledComponent(new JBLabel("Local dir/file: "), localDirChoose)
                 .addComponent(new TitledSeparator("Command"))
                 .addLabeledComponent(new JBLabel("Build cmd: "), buildCmdText)
-                .addComponent(tip2)
+                // .addComponent(tip2)
                 .addLabeledComponent(new JBLabel("Deploy cmd: "), deployCmdText)
-                .addComponent(tip)
+                // .addComponent(tip)
+                .addComponent(new TitledSeparator("Note"))
+                .addLabeledComponent(new JBLabel("For detailed setting instructions, please see: "),
+                        new UrlTextPane("https://github.com/04637/jscp-plugin/blob/master/README.md"))
+                .addLabeledComponent(new JBLabel("Github: "),
+                        new UrlTextPane("https://github.com/04637/jscp-plugin"))
+                .addLabeledComponent(new JBLabel("WeChat: "), weChat)
                 .addComponentFillVertically(new JPanel(), 0)
                 .getPanel();
         mainPanel.setPreferredSize(new Dimension(400, -1));
