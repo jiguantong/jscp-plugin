@@ -6,14 +6,11 @@
 
     <description><![CDATA[
         <h2>在 IDEs 中一键完成构建, 上传, 远程启动, 日志监控</h2>
-        <emb>无需切换窗口或打开其他应用即可完成部署及日志监控</emb>
+        <em>No need to switch windows or open other applications(like Xftp, Xshell) to complete the build deployment and log monitoring.</em>
         <hr>
-        <h3>设置: File => Settings => Jscp Plugin</h3>
-        <br>
-        <p>配置说明: <a href="https://github.com/04637/jscp-plugin/blob/master/README.md">ReadMe</a></p>
+        <h3>Config: File => Settings => Jscp Plugin</h3>
+        <p>Detailed configuration instructions: <a href="https://github.com/04637/jscp-plugin/blob/master/README.md">ReadMe</a></p>
         <ul>
-            <li>Server ip: 服务器IP, 会将文件上传至该ip</li>
-            <li>Ssh port: 服务器ssh端口, 默认22</li>
             <li>Server ip: 服务器IP, 会将文件上传至该ip</li>
             <li>Ssh port: 服务器ssh端口, 默认22</li>
             <li>User name: 服务器登录用户名</li>
@@ -28,7 +25,7 @@
             <li>IDEs右上角Build左侧蓝色按钮, 点击执行</li>
         </ul>
         <hr>
-        <a href="https://github.com/04637/jscp-plugin/releases">离线插件包下载</a><br>
+        <a href="https://github.com/04637/jscp-plugin/releases">下载离线插件包</a><br>
         <a href="https://github.com/04637/jscp-plugin">https://github.com/04637/jscp-plugin</a><br>
         <a href="https://github.com/04637/go-pscp">https://github.com/04637/go-pscp</a><br>
     ]]>
