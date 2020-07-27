@@ -1,7 +1,7 @@
 <idea-plugin>
     <id>aid.dev.jscp</id>
     <name>Jscp</name>
-    <version>0.8.5</version>
+    <version>0.8.6</version>
     <vendor email="04637@163.com" url="https://github.com/04637">阳光彩虹小白马Plus</vendor>
 
     <description><![CDATA[
@@ -33,11 +33,7 @@
 
     <change-notes><![CDATA[
     <ul>
-      <li>更新插件描述</li>
-      <li>添加详细设置项说明</li>
-      <li>更改设置位置, 使其更容易找到</li>
-      <li>现在支持build命令整合</li>
-      <li>解决日志中文乱码问题</li>
+      <li>解决 build cmd 中文乱码问题</li>
     </ul>
     ]]>
     </change-notes>

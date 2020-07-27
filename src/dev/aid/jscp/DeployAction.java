@@ -30,6 +30,7 @@ import java.io.OutputStream;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.nio.charset.Charset;
 import java.util.List;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
@@ -113,7 +114,7 @@ public class DeployAction extends AnAction {
                     process = runtime.exec(buildCmd, null, new File(basePath));
 
                     processHandler =
-                            new OSProcessHandler(process, buildCmd) {
+                            new OSProcessHandler(process, buildCmd, Charset.forName("GBK")) {
                                 @NotNull
                                 @Override
                                 protected BaseOutputReader.Options readerOptions() {
