@@ -5,27 +5,28 @@
     <vendor email="04637@163.com" url="https://github.com/04637">阳光彩虹小白马Plus</vendor>
 
     <description><![CDATA[
-        <h2>在 IDEs 中一键完成构建, 上传, 远程启动, 日志监控</h2>
+        <h2>One-click to build, deploy and monitor logs.</h2>
+        <em>在 IDEs 中一键完成构建, 上传, 远程启动, 日志监控</em><br>
         <em>No need to switch windows or open other applications(like Xftp, Xshell) to complete the build deployment and log monitoring.</em>
         <hr>
         <h3>Config: File => Settings => Jscp Plugin</h3>
-        <p>Detailed configuration instructions: <a href="https://github.com/04637/jscp-plugin/blob/master/README.md">ReadMe</a></p>
+        <p>Detailed configuration instructions(Chinese): <a href="https://github.com/04637/jscp-plugin/blob/master/README.md">ReadMe</a></p>
         <ul>
-            <li>Server ip: 服务器IP, 会将文件上传至该ip</li>
-            <li>Ssh port: 服务器ssh端口, 默认22</li>
-            <li>User name: 服务器登录用户名</li>
-            <li>Password: 登录密码</li>
-            <li>Remote dir: 文件将上传至服务器上的该目录</li>
-            <li>Local dir/file: 选择本地待上传的目录/文件</li>
-            <li>Build cmd: 文件上传前将在本地执行该命令, 可为空</li>
-            <li>Deploy cmd: 文件上传完成后将在服务器执行该命令, 可为空</li>
+            <li>Server ip: The local file specified below will be uploaded to this IP</li>
+            <li>Ssh port: Server ssh port, default is 22</li>
+            <li>User name: Server login username, default root</li>
+            <li>Password: Server login password</li>
+            <li>Remote dir: The local files specified below will be uploaded to this directory on the server</li>
+            <li>Local dir/file: Local file/directory to be placed on the server</li>
+            <li>Build cmd: The command will be executed locally before the file is uploaded, and it can be empty</li>
+            <li>Deploy cmd: After the file is uploaded, the command will be executed on the server, which can be empty</li>
         </ul>
-        <p>使用: </p>
+        <p>Use: </p>
         <ul>
-            <li>IDEs右上角Build左侧蓝色按钮, 点击执行</li>
+            <li>The blue button on the left side of Build in the upper right corner of IDEs, click to execute</li>
         </ul>
         <hr>
-        <a href="https://github.com/04637/jscp-plugin/releases">下载离线插件包</a><br>
+        <a href="https://github.com/04637/jscp-plugin/releases">Download offline plugin package</a><br>
         <a href="https://github.com/04637/jscp-plugin">https://github.com/04637/jscp-plugin</a><br>
         <a href="https://github.com/04637/go-pscp">https://github.com/04637/go-pscp</a><br>
     ]]>
@@ -33,7 +34,7 @@
 
     <change-notes><![CDATA[
     <ul>
-      <li>解决 build cmd 中文乱码问题</li>
+      <li>Solve the problem of Chinese garbled in build cmd</li>
     </ul>
     ]]>
     </change-notes>
