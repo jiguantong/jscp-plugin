@@ -18,3 +18,4 @@ https://plugins.jetbrains.com/plugin/14779-jscp/
 > `source /etc/profile&&${TOMCAT_HOME}/bin/shutdown.sh&&${TOMCAT_HOME}/bin/startup.sh&&tail -f ${TOMCAT_HOME}/logs/catalina.out`
   
 ### 2. 执行: 按钮在 IDEs 右上角 Build 左侧, 点击即可执行
+![操作按钮](https://github.com/04637/jscp-plugin/blob/master/otherR/action.png)
