@@ -1,7 +1,7 @@
 <idea-plugin>
     <id>aid.dev.jscp</id>
     <name>Jscp</name>
-    <version>0.8.6.1</version>
+    <version>0.8.6.2</version>
     <vendor email="04637@163.com" url="https://github.com/04637">阳光彩虹小白马Plus</vendor>
 
     <description><![CDATA[
@@ -36,6 +36,7 @@
     <ul>
       <li>Solve the problem of Chinese garbled in build cmd</li>
       <li>Icon becomes bigger</li>
+      <li>Add action to main tool bar</li>
     </ul>
     ]]>
     </change-notes>
@@ -55,6 +56,11 @@
         <action id="dev.aid.jscp.DeployAction" class="dev.aid.jscp.DeployAction"
             text="Deploy project" description="Deploy project" icon="/icons/up.svg">
             <add-to-group group-id="NavBarToolBar" anchor="before"
+                relative-to-action="ToolbarRunGroup" />
+        </action>
+        <action id="dev.aid.jscp.DeployAction2" class="dev.aid.jscp.DeployAction"
+            text="Deploy project" description="Deploy project" icon="/icons/up.svg">
+            <add-to-group group-id="MainToolBar" anchor="before"
                 relative-to-action="ToolbarRunGroup" />
         </action>
     </actions>
